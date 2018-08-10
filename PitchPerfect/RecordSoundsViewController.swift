@@ -55,8 +55,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
-        
-        print("The audio file is in: \(filePath)")
+    
+        print("The audio file is in: \(String(describing: filePath))")
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
         
@@ -69,14 +69,23 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        
+        //Check if file finish record
         if(flag){
             self.performSegue(withIdentifier: "stopRecordingSegue", sender: self.audioRecorder.url)
-            print("Finish recording....")
+            print("Finishes record audio file....")
         }else{
              print("Not working to record....")
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Segue activated: \(String(describing: segue.identifier))....")
         
+        if(segue.identifier == "stopRecordingSegue"){
+            let playSoundVC = segue.destination as! PlaySoundsViewController
+            let recordedAudioURL = sender as! URL
+            playSoundVC.recordedAudioURL = recordedAudioURL
+        }
     }
 }
 
