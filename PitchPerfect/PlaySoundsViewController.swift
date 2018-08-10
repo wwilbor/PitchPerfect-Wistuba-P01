@@ -26,7 +26,6 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var reverbButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
-   
     
     enum ButtonType: Int {
         case slow = 0, fast, chipmunk, vader, echo, reverb
@@ -35,7 +34,7 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupAudio()
-        // Do any additional setup after loading the view.
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,13 +43,11 @@ class PlaySoundsViewController: UIViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
     @IBAction func playSoundForButton(_ sender: UIButton) {
-        print("Play Sound Button Pressed: \(ButtonType(rawValue: sender.tag)!)" )
-        
+
         switch(ButtonType(rawValue: sender.tag)!) {
             case .slow:
                 playSound(rate: 0.5)
@@ -69,9 +66,8 @@ class PlaySoundsViewController: UIViewController {
         configureUI(.playing)
         
     }
-    
+
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
-        print("Stop Audio Button Pressed")
         self.stopAudio()
     }
     
