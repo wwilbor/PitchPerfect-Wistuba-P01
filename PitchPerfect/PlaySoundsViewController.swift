@@ -41,9 +41,7 @@ class PlaySoundsViewController: UIViewController {
         super.viewWillAppear(animated)
         self.configureUI(PlaySoundsViewController.PlayingState.notPlaying)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+
     
     
     @IBAction func playSoundForButton(_ sender: UIButton) {

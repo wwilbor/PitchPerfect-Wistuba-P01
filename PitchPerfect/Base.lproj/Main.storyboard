@@ -46,8 +46,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uHM-1n-YA6" firstAttribute="centerX" secondItem="uGL-t1-HVF" secondAttribute="centerX" id="3hv-nM-Vkz"/>
-                            <constraint firstItem="uGL-t1-HVF" firstAttribute="centerY" secondItem="5J2-Al-YaR" secondAttribute="centerY" id="8Q5-Kw-rCN"/>
+                            <constraint firstItem="uGL-t1-HVF" firstAttribute="centerY" secondItem="5J2-Al-YaR" secondAttribute="centerY" priority="750" id="8Q5-Kw-rCN"/>
+                            <constraint firstItem="5J2-Al-YaR" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6sF-SG-YXG" secondAttribute="bottom" constant="10" id="SGU-4R-vdf"/>
                             <constraint firstItem="6sF-SG-YXG" firstAttribute="top" secondItem="uHM-1n-YA6" secondAttribute="bottom" constant="8" id="Wou-ku-VaD"/>
+                            <constraint firstItem="uGL-t1-HVF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5J2-Al-YaR" secondAttribute="top" constant="25" id="Z37-Mr-hdS"/>
                             <constraint firstItem="uGL-t1-HVF" firstAttribute="centerX" secondItem="5J2-Al-YaR" secondAttribute="centerX" id="awL-CL-0Ac"/>
                             <constraint firstItem="uHM-1n-YA6" firstAttribute="top" secondItem="uGL-t1-HVF" secondAttribute="bottom" constant="1.5" id="iS5-gr-eWU"/>
                             <constraint firstItem="6sF-SG-YXG" firstAttribute="centerX" secondItem="uHM-1n-YA6" secondAttribute="centerX" id="mrd-yZ-RP2"/>
